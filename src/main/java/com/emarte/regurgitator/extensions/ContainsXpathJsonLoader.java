@@ -9,7 +9,7 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMES
 import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
 
 public class ContainsXpathJsonLoader implements JsonLoader<ConditionBehaviour> {
-	private static Log log = Log.getLog(ContainsXpathJsonLoader.class);
+	private static final Log log = Log.getLog(ContainsXpathJsonLoader.class);
 
 	@Override
 	public ConditionBehaviour load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

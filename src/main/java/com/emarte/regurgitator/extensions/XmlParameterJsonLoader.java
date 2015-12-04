@@ -5,14 +5,12 @@ import net.sf.json.JSONObject;
 
 import java.util.*;
 
-import static com.emarte.regurgitator.core.CoreConfigConstants.*;
 import static com.emarte.regurgitator.core.JsonConfigUtil.*;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
-import static com.emarte.regurgitator.extensions.NamespaceLoader.loadNamespaces;
 
 public class XmlParameterJsonLoader implements JsonLoader<Step> {
-    private static Log log = Log.getLog(XmlParameter.class);
+    private static final Log log = Log.getLog(XmlParameter.class);
 
 	@Override
 	public Step load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

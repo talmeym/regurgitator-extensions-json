@@ -9,7 +9,7 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.NamespaceLoader.loadNamespaces;
 
 public class XPathProcessorJsonLoader implements JsonLoader<ValueProcessor> {
-	private static Log log = Log.getLog(XPathProcessorJsonLoader.class);
+	private static final Log log = Log.getLog(XPathProcessorJsonLoader.class);
 
 	@Override
 	public XPathProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
