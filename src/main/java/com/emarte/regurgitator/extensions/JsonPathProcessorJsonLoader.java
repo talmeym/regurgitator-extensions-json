@@ -7,7 +7,7 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.JSONPATH;
 
-public class JsonPathProcessorJsonLoader implements JsonLoader<ValueProcessor> {
+public class JsonPathProcessorJsonLoader implements JsonLoader<JsonPathProcessor> {
 	private static final Log log = Log.getLog(JsonPathProcessor.class);
 
 	@Override

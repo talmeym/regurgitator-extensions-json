@@ -5,19 +5,19 @@ import net.sf.json.JSONObject;
 
 import java.util.*;
 
+import static com.emarte.regurgitator.core.JsonConfigUtil.loadMandatoryStr;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
 import static com.emarte.regurgitator.extensions.NamespaceLoader.loadNamespaces;
 
-public class XPathProcessorJsonLoader implements JsonLoader<ValueProcessor> {
-	private static final Log log = Log.getLog(XPathProcessorJsonLoader.class);
+public class XpathProcessorJsonLoader implements JsonLoader<XpathProcessor> {
+	private static final Log log = Log.getLog(XpathProcessorJsonLoader.class);
 
 	@Override
-	public XPathProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
-		String xpath = jsonObject.getString(XPATH);
+	public XpathProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
 		Object namespaceObj = jsonObject.get(NAMESPACES);
 		Map<String,String> namespaces =
 				namespaceObj != null ? namespaceObj instanceof String ? loadNamespaces((String) namespaceObj, log) : JsonNamespaceLoader.loadNamespaces((JSONObject) namespaceObj) : null;
 		log.debug("Loaded xpath processor");
-		return new XPathProcessor(xpath, namespaces);
+		return new XpathProcessor(loadMandatoryStr(jsonObject, XPATH), namespaces);
 	}
 }

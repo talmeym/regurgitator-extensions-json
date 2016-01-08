@@ -20,6 +20,6 @@ public class XmlParameterJsonLoader implements JsonLoader<Step> {
 		ValueProcessor processor = loadOptionalValueProcessor(jsonObject, allIds);
 		String id = loadId(jsonObject, allIds);
 		log.debug("Loaded xml parameter '" + id + "'");
-		return new XmlParameter(id, loadPrototype(jsonObject), loadContext(jsonObject), loadContextLocation(jsonObject), new XPathProcessor(xpath, namespaces), processor);
+		return new XmlParameter(id, loadPrototype(jsonObject), loadContext(jsonObject), loadContextLocation(jsonObject), new XpathProcessor(xpath, namespaces), processor);
 	}
 }
