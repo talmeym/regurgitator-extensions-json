@@ -6,7 +6,9 @@ import net.sf.json.JSONObject;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
+import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalBoolean;
 import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalStr;
+import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class FreemarkerBuilderJsonLoader extends FreemarkerBuilderLoader implements JsonLoader<ValueBuilder> {
 	private static final Log log = Log.getLog(FreemarkerBuilderJsonLoader.class);
@@ -16,6 +18,7 @@ public class FreemarkerBuilderJsonLoader extends FreemarkerBuilderLoader impleme
 		String source = loadOptionalStr(jsonObject, SOURCE);
 		String value = loadOptionalStr(jsonObject, VALUE);
 		String file = loadOptionalStr(jsonObject, FILE);
-		return buildFreemarkerValueBuilder(source, value, file, log);
+		boolean allContexts = loadOptionalBoolean(jsonObject, ALL_CONTEXTS);
+		return buildFreemarkerValueBuilder(source, value, file, allContexts, log);
 	}
 }
