@@ -8,11 +8,11 @@ import java.util.*;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
 import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
 
-public class ContainsXpathJsonLoader implements JsonLoader<ConditionBehaviour> {
+public class ContainsXpathJsonLoader implements JsonLoader<ContainsXpath> {
 	private static final Log log = Log.getLog(ContainsXpathJsonLoader.class);
 
 	@Override
-	public ConditionBehaviour load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
+	public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
 		Object namespaceObj = jsonObject.get(NAMESPACES);
 		Map<String,String> namespaces =
 				namespaceObj != null ? namespaceObj instanceof String ? loadNamespaces((String) namespaceObj, log) : loadNamespaces((JSONObject) namespaceObj) : null;

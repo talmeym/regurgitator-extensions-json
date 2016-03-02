@@ -8,11 +8,11 @@ import java.util.Set;
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
 import static com.emarte.regurgitator.core.JsonConfigUtil.loadMandatoryStr;
 
-public class XmlSchemaValidatorJsonLoader implements JsonLoader<ValueProcessor> {
+public class XmlSchemaValidatorJsonLoader implements JsonLoader<XmlSchemaValidator> {
 	private static final Log log = Log.getLog(XmlSchemaValidatorJsonLoader.class);
 
 	@Override
-	public ValueProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
+	public XmlSchemaValidator load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
 		log.debug("Loaded xml schema validator");
 		return new XmlSchemaValidator(loadMandatoryStr(jsonObject, FILE));
 	}
