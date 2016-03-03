@@ -15,7 +15,7 @@ a json-parameter creates a parameter, extracting it's value from within a json d
     "kind": "json-parameter",
     "name": "book-name",
     "source": "book-catalogue",
-    "json-path": "/bk:catalogue/bk:book/bk:name"
+    "json-path": "$.catalogue.book.name"
 }
 ```
 
