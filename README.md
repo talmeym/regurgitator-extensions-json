@@ -118,7 +118,7 @@ a json-path-processor processes a parameter value, extracting a value from it us
     "source": "book-catalogue",
     "processor": {
         "kind": "json-path-processor",
-        "value": "$.catalogue.book.name"
+        "json-path": "$.catalogue.book.name"
     }
 }
 ```
