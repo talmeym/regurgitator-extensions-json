@@ -109,7 +109,54 @@ a velocity-builder builds from just the ``parameters`` context by default. if th
 
 ### json-path-processor
 
+a json-path-processor processes a parameter value, extracting a value from it using json path.
+
+```json
+{
+    "kind": "create-parameter",
+    "name": "book-name",
+    "source": "book-catalogue",
+    "processor": {
+        "kind": "json-path-processor",
+        "value": "$.catalogue.book.name"
+    }
+}
+```
+
 ### xpath-processor
+
+an xpath-processor processes a parameter value, extracting a value from it using xpath.
+
+```json
+{
+    "kind": "create-parameter",
+    "name": "book-name",
+    "source": "book-catalogue",
+    "processor": {
+        "kind": "xpath-processor",
+        "xpath": "/cat:atalogue/bk:book/@name",
+        "namespaces": "cat=http://catalogues.com,bk=http://books.com"
+    }
+}
+```
+
+namespaces for an xpath-processor can also be declared as a object property of the processor:
+
+```json
+{
+    "kind": "create-parameter",
+    "name": "book-name",
+    "source": "book-catalogue",
+    "processor": {
+        "kind": "xpath-processor",
+        "xpath": "/cat:atalogue/bk:book/@name",
+        "namespaces": {
+            "cat": "http://catalogues.com",
+            "bk": "http://books.com"
+        }
+    }
+}
+```
 
 ### freemarker-processor
 
