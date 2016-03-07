@@ -45,17 +45,17 @@ a freemarker-builder agregating parameter values together using a freemarker tem
 
 ```json
 {
-    "kind": "fremarker-builder",
+    "kind": "freemarker-builder",
     "source": "template-param"
 }
 
 {
-    "kind": "fremarker-builder",
+    "kind": "freemarker-builder",
     "file": "classpath:/template.ftl"
 }
 
 {
-    "kind": "fremarker-builder",
+    "kind": "freemarker-builder",
     "value": "This is a ${descriptive} day"
 }
 ```
@@ -66,7 +66,7 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 
 ```json
 {
-    "kind": "fremarker-builder",
+    "kind": "freemarker-builder",
     "all-contexts": "true",
     "value": "{ \"response\": \"${response_payload.text}\", \"status-code\": ${response-metadata.status_code}, \"content-type\": \"${response-metadata.content_type}\" }"
 }
@@ -74,6 +74,38 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 ```
 
 ### velocity-builder
+
+a freemarker-builder agregating parameter values together using a freemarker template.
+
+```json
+{
+    "kind": "velocity-builder",
+    "source": "template-param"
+}
+
+{
+    "kind": "velocity-builder",
+    "file": "classpath:/template.ftl"
+}
+
+{
+    "kind": "velocity-builder",
+    "value": "This is a ${descriptive} day"
+}
+```
+
+a velocity-builder can use the same value source properties as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value.
+
+a velocity-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` property is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
+
+```json
+{
+    "kind": "velocity-builder",
+    "all-contexts": "true",
+    "value": "{ \"response\": \"${response_payload.text}\", \"status-code\": ${response-metadata.status_code}, \"content-type\": \"${response-metadata.content_type}\" }"
+}
+
+```
 
 ### json-path-processor
 
