@@ -36,3 +36,19 @@ an xml-parameter creates a parameter, extracting it's value from within an xml d
     }
 }
 ```
+
+## extension constructs in xml
+
+### freemarker-builder 
+
+### velocity-builder
+
+### json-path-processor
+
+### xpath-processor
+
+### freemarker-processor
+
+### velocity-processor
+
+### xml-schema-validator
