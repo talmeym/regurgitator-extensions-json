@@ -67,7 +67,7 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 ```json
 {
     "kind": "fremarker-builder",
-    "all-contexts": "true,
+    "all-contexts": "true",
     "value": "{ \"response\": \"${response_payload.text}\", \"status-code\": ${response-metadata.status_code}, \"content-type\": \"${response-metadata.content_type}\" }"
 }
 
