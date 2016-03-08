@@ -225,4 +225,4 @@ an xml-schema-validator is a ``value-processor`` that validates a parameter valu
 }
 ```
 
-validating a parameter value can be useful in ensuring that your configured logic and processing always returns valid responses. if the value fails validation, an exception is raised.
+validating a parameter value can be useful in ensuring that your configured logic and processing always returns valid responses. if the value fails validation, an exception is thrown; if it passes, the value is passed through unchanged.
