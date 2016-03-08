@@ -186,4 +186,28 @@ the parameter value is made available to the template as simply ``value``. the t
 
 ### velocity-processor
 
+a velocity-processor processes a parameter value, formatting the value using a velocity template.
+
+```json
+{
+    "kind": "create-response",
+    "source": "unformatted-response",
+    "processor": {
+        "kind": "velocity-processor",
+        "file": "classpath:/template.ftl"
+    }
+}
+
+{
+    "kind": "create-response",
+    "source": "unformatted-response",
+    "processor": {
+        "kind": "velocity-processor",
+        "value": "The response was: ${value}"
+    }
+}
+```
+
+the parameter value is made available to the template as simply ``value``. the template text can be specified in a ``value`` property or drawn in from a file.
+
 ### xml-schema-validator
