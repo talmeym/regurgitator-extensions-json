@@ -8,6 +8,10 @@ import java.util.*;
 public class JsonNamespaceLoader extends NamespaceLoader {
 	private static final Log log = Log.getLog(JsonNamespaceLoader.class);
 
+	public static Map<String, String> loadNamespaces(Object object) {
+		return object == null ? null : object instanceof String ? loadNamespaces((String) object, log) : loadNamespaces((JSONObject)object);
+	}
+
 	public static Map<String, String> loadNamespaces(JSONObject jsonObject) {
 		Map<String, String> namespaceMap = new HashMap<String,  String>();
 
