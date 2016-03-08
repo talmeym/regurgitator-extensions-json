@@ -160,6 +160,30 @@ namespaces for an xpath-processor can also be declared as a object property of t
 
 ### freemarker-processor
 
+a freemarker-processor processes a parameter value, formatting the value using a freemarker template.
+
+```json
+{
+    "kind": "create-response",
+    "source": "unformatted-response",
+    "processor": {
+        "kind": "freemarker-processor",
+        "file": "classpath:/template.ftl"
+    }
+}
+
+{
+    "kind": "create-response",
+    "source": "unformatted-response",
+    "processor": {
+        "kind": "freemarker-processor",
+        "value": "The response was: ${value}"
+    }
+}
+```
+
+the parameter value is made available to the template as simply ``value``. the template text can be specified in a ``value`` property or drawn in from a file.
+
 ### velocity-processor
 
 ### xml-schema-validator
