@@ -41,7 +41,7 @@ an xml-parameter creates a parameter, extracting it's value from within an xml d
 
 ### freemarker-builder 
 
-a freemarker-builder agregating parameter values together using a freemarker template.
+a freemarker-builder aggregating parameter values together using a freemarker template.
 
 ```json
 {
@@ -75,7 +75,7 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 
 ### velocity-builder
 
-a freemarker-builder agregating parameter values together using a freemarker template.
+a freemarker-builder aggregating parameter values together using a freemarker template.
 
 ```json
 {
