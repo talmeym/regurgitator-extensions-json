@@ -5,11 +5,12 @@ import net.sf.json.JSONObject;
 
 import java.util.Set;
 
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
 import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
 
 public class ContainsXpathJsonLoader implements JsonLoader<ContainsXpath> {
-	private static final Log log = Log.getLog(ContainsXpathJsonLoader.class);
+	private static final Log log = getLog(ContainsXpathJsonLoader.class);
 
 	@Override
 	public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

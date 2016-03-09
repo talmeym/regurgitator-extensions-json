@@ -5,10 +5,11 @@ import net.sf.json.JSONObject;
 
 import java.util.Set;
 
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.JSONPATH;
 
 public class JsonPathProcessorJsonLoader implements JsonLoader<JsonPathProcessor> {
-	private static final Log log = Log.getLog(JsonPathProcessor.class);
+	private static final Log log = getLog(JsonPathProcessor.class);
 
 	@Override
 	public JsonPathProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

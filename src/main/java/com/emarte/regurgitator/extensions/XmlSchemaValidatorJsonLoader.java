@@ -7,9 +7,10 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.FILE;
 import static com.emarte.regurgitator.core.JsonConfigUtil.loadMandatoryStr;
+import static com.emarte.regurgitator.core.Log.getLog;
 
 public class XmlSchemaValidatorJsonLoader implements JsonLoader<XmlSchemaValidator> {
-	private static final Log log = Log.getLog(XmlSchemaValidatorJsonLoader.class);
+	private static final Log log = getLog(XmlSchemaValidatorJsonLoader.class);
 
 	@Override
 	public XmlSchemaValidator load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

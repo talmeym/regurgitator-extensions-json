@@ -7,9 +7,10 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
 import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalStr;
+import static com.emarte.regurgitator.core.Log.getLog;
 
 public class FreemarkerProcessorJsonLoader extends FreemarkerProcessorLoader implements JsonLoader<ValueProcessor> {
-	private static final Log log = Log.getLog(FreemarkerProcessorJsonLoader.class);
+	private static final Log log = getLog(FreemarkerProcessorJsonLoader.class);
 
 	@Override
 	public ValueProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

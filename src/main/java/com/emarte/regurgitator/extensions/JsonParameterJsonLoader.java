@@ -7,10 +7,11 @@ import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
 import static com.emarte.regurgitator.core.JsonConfigUtil.*;
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.JSONPATH;
 
 public class JsonParameterJsonLoader extends JsonParameterLoader implements JsonLoader<Step> {
-    private static final Log log = Log.getLog(JsonParameterJsonLoader.class);
+    private static final Log log = getLog(JsonParameterJsonLoader.class);
 
 	@Override
 	public Step load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {

@@ -6,12 +6,12 @@ import net.sf.json.JSONObject;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
-import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalBoolean;
-import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalStr;
+import static com.emarte.regurgitator.core.JsonConfigUtil.*;
+import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 
 public class FreemarkerBuilderJsonLoader extends FreemarkerBuilderLoader implements JsonLoader<ValueBuilder> {
-	private static final Log log = Log.getLog(FreemarkerBuilderJsonLoader.class);
+	private static final Log log = getLog(FreemarkerBuilderJsonLoader.class);
 
 	@Override
 	public ValueBuilder load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
