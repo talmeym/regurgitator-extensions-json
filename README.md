@@ -37,7 +37,7 @@ an xml-parameter creates a parameter, extracting it's value from within an xml d
 }
 ```
 
-## extension constructs in xml
+## extension constructs in json
 
 ### freemarker-builder 
 
