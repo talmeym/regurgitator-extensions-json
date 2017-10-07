@@ -1,3 +1,7 @@
+/*
+ * Copyright (C) 2017 Miles Talmey.
+ * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
+ */
 package com.emarte.regurgitator.extensions;
 
 import com.emarte.regurgitator.core.Log;
@@ -7,14 +11,14 @@ import java.util.*;
 
 import static com.emarte.regurgitator.core.Log.getLog;
 
-public class JsonNamespaceLoader extends NamespaceLoader {
+class JsonNamespaceLoader extends NamespaceLoader {
 	private static final Log log = getLog(JsonNamespaceLoader.class);
 
-	public static Map<String, String> loadNamespaces(Object object) {
+	static Map<String, String> loadNamespaces(Object object) {
 		return object == null ? null : object instanceof String ? loadNamespaces((String) object, log) : loadNamespaces((JSONObject)object);
 	}
 
-	public static Map<String, String> loadNamespaces(JSONObject jsonObject) {
+	static Map<String, String> loadNamespaces(JSONObject jsonObject) {
 		Map<String, String> namespaceMap = new HashMap<String,  String>();
 
 		for(Object key: jsonObject.keySet()) {
