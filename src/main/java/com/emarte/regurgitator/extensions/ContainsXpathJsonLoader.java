@@ -18,7 +18,7 @@ public class ContainsXpathJsonLoader implements JsonLoader<ContainsXpath> {
 
 	@Override
 	public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
-		log.debug("Loaded ContainsXpath");
+		log.debug("Loaded contains xpath");
 		return new ContainsXpath(loadNamespaces(jsonObject.get(NAMESPACES)));
 	}
 }

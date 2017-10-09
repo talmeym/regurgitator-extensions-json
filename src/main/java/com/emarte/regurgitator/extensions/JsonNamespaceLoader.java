@@ -25,10 +25,10 @@ class JsonNamespaceLoader extends NamespaceLoader {
 			String prefix = (String) key;
 			String uri = jsonObject.getString(prefix);
 			namespaceMap.put(prefix, uri);
-			log.debug("Loaded namespace '" + prefix + "=" + uri + "'");
+			log.debug("Loaded namespace '{}={}'", prefix, uri);
 		}
 
-		log.debug("Loaded " + namespaceMap.size() + " namespaces");
+		log.debug("Loaded {} namespaces", namespaceMap.size());
 		return namespaceMap;
 	}
 }
