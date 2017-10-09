@@ -14,11 +14,11 @@ import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMES
 import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
 
 public class ContainsXpathJsonLoader implements JsonLoader<ContainsXpath> {
-	private static final Log log = getLog(ContainsXpathJsonLoader.class);
+    private static final Log log = getLog(ContainsXpathJsonLoader.class);
 
-	@Override
-	public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
-		log.debug("Loaded contains xpath");
-		return new ContainsXpath(loadNamespaces(jsonObject.get(NAMESPACES)));
-	}
+    @Override
+    public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
+        log.debug("Loaded contains xpath");
+        return new ContainsXpath(loadNamespaces(jsonObject.get(NAMESPACES)));
+    }
 }

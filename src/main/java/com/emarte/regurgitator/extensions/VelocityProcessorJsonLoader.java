@@ -14,12 +14,12 @@ import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.core.Log.getLog;
 
 public class VelocityProcessorJsonLoader extends VelocityProcessorLoader implements JsonLoader<ValueProcessor> {
-	private static final Log log = getLog(VelocityProcessorJsonLoader.class);
+    private static final Log log = getLog(VelocityProcessorJsonLoader.class);
 
-	@Override
-	public ValueProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
-		String value = loadOptionalStr(jsonObject, VALUE);
-		String file = loadOptionalStr(jsonObject, FILE);
-		return buildVelocityValueProcessor(value, file, log);
-	}
+    @Override
+    public ValueProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
+        String value = loadOptionalStr(jsonObject, VALUE);
+        String file = loadOptionalStr(jsonObject, FILE);
+        return buildVelocityValueProcessor(value, file, log);
+    }
 }

@@ -14,11 +14,11 @@ import static com.emarte.regurgitator.core.JsonConfigUtil.loadMandatoryStr;
 import static com.emarte.regurgitator.core.Log.getLog;
 
 public class XmlSchemaValidatorJsonLoader implements JsonLoader<XmlSchemaValidator> {
-	private static final Log log = getLog(XmlSchemaValidatorJsonLoader.class);
+    private static final Log log = getLog(XmlSchemaValidatorJsonLoader.class);
 
-	@Override
-	public XmlSchemaValidator load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
-		log.debug("Loaded xml schema validator");
-		return new XmlSchemaValidator(loadMandatoryStr(jsonObject, FILE));
-	}
+    @Override
+    public XmlSchemaValidator load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
+        log.debug("Loaded xml schema validator");
+        return new XmlSchemaValidator(loadMandatoryStr(jsonObject, FILE));
+    }
 }
