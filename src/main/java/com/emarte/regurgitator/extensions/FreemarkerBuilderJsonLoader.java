@@ -10,7 +10,8 @@ import net.sf.json.JSONObject;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
-import static com.emarte.regurgitator.core.JsonConfigUtil.*;
+import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalBoolean;
+import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
 

@@ -7,7 +7,8 @@ package com.emarte.regurgitator.extensions;
 import com.emarte.regurgitator.core.Log;
 import net.sf.json.JSONObject;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import static com.emarte.regurgitator.core.Log.getLog;
 

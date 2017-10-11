@@ -7,11 +7,12 @@ package com.emarte.regurgitator.extensions;
 import com.emarte.regurgitator.core.*;
 import net.sf.json.JSONObject;
 
-import java.util.*;
+import java.util.Set;
 
 import static com.emarte.regurgitator.core.JsonConfigUtil.loadMandatoryStr;
 import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.*;
+import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
+import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.XPATH;
 import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
 
 public class XpathProcessorJsonLoader implements JsonLoader<XpathProcessor> {
