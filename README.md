@@ -72,7 +72,7 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 }
 ```
 
-as well as defining a json template value as a string (shown above), they can also be defined as actual json, to be collapsed to a string upon loading.
+as well as defining a json template value as a string (shown above), they can also be defined as a json object, to be collapsed to a string upon loading.
 
 ```json
 {
