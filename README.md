@@ -68,18 +68,18 @@ a freemarker-builder builds from just the ``parameters`` context by default. if 
 {
     "kind": "freemarker-builder",
     "all-contexts": "true",
-    "value": "{ \"response\": \"${response_payload.text}\", \"status-code\": ${response_metadata.status_code}, \"content-type\": \"${response_metadata.content_type}\" }"
+    "value": "{ \"payload\": \"${response_payload.text}\", \"status-code\": ${response_metadata.status_code}, \"content-type\": \"${response_metadata.content_type}\" }"
 }
 ```
 
-as well as defining a json template as a string (shown above), they can also be defined as actual json, to be collapsed to a string upon loading.
+as well as defining a json template value as a string (shown above), they can also be defined as actual json, to be collapsed to a string upon loading.
 
 ```json
 {
     "kind": "freemarker-builder",
     "all-contexts": "true",
     "value": { 
-        "response": "${response_payload.text}",
+        "payload": "${response_payload.text}",
         "status-code": "${response_metadata.status_code}",
         "content-type": "${response_metadata.content_type}"
     }
