@@ -115,9 +115,22 @@ a velocity-builder builds from just the ``parameters`` context by default. if th
 {
     "kind": "velocity-builder",
     "all-contexts": "true",
-    "value": "{ \"response\": \"${response_payload.text}\", \"status-code\": ${response-metadata.status_code}, \"content-type\": \"${response-metadata.content_type}\" }"
+    "value": "{ \"payload\": \"${response_payload.text}\", \"status-code\": ${response_metadata.status_code}, \"content-type\": \"${response_metadata.content_type}\" }"
 }
+```
 
+as well as defining a json template value as a string (shown above), they can also be defined as a json object, to be collapsed to a string upon loading.
+
+```json
+{
+    "kind": "velocity-builder",
+    "all-contexts": "true",
+    "value": { 
+        "payload": "${response_payload.text}",
+        "status-code": "${response_metadata.status_code}",
+        "content-type": "${response_metadata.content_type}"
+    }
+}
 ```
 
 ### json-path-processor
