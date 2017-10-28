@@ -10,7 +10,7 @@ import net.sf.json.JSONObject;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
-import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalBoolean;
+import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalBool;
 import static com.emarte.regurgitator.core.JsonConfigUtil.loadOptionalStr;
 import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.ALL_CONTEXTS;
@@ -23,7 +23,7 @@ public class VelocityBuilderJsonLoader extends VelocityBuilderLoader implements 
         String source = loadOptionalStr(jsonObject, SOURCE);
         String value = loadOptionalStr(jsonObject, VALUE);
         String file = loadOptionalStr(jsonObject, FILE);
-        boolean allContexts = loadOptionalBoolean(jsonObject, ALL_CONTEXTS);
+        boolean allContexts = loadOptionalBool(jsonObject, ALL_CONTEXTS);
         return buildVelocityValueBuilder(source, value, file, allContexts, log);
     }
 }
