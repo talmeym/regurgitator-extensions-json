@@ -4,7 +4,8 @@
  */
 package com.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.JsonLoader;
+import com.emarte.regurgitator.core.Log;
 import net.sf.json.JSONObject;
 
 import java.util.Set;
@@ -17,7 +18,7 @@ public class ContainsXpathJsonLoader implements JsonLoader<ContainsXpath> {
     private static final Log log = getLog(ContainsXpathJsonLoader.class);
 
     @Override
-    public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
+    public ContainsXpath load(JSONObject jsonObject, Set<Object> allIds) {
         log.debug("Loaded contains xpath");
         return new ContainsXpath(loadNamespaces(jsonObject.get(NAMESPACES)));
     }

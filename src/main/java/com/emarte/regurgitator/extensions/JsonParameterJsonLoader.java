@@ -7,6 +7,7 @@ package com.emarte.regurgitator.extensions;
 import com.emarte.regurgitator.core.*;
 import net.sf.json.JSONObject;
 
+import java.util.List;
 import java.util.Set;
 
 import static com.emarte.regurgitator.core.CoreConfigConstants.*;
@@ -23,7 +24,7 @@ public class JsonParameterJsonLoader extends JsonParameterLoader implements Json
         String source = loadOptionalStr(jsonObject, SOURCE);
         String value = loadOptionalStr(jsonObject, VALUE);
         String file = loadOptionalStr(jsonObject, FILE);
-        ValueProcessor processor = loadOptionalValueProcessor(jsonObject, allIds);
-        return buildJsonParameter(loadId(jsonObject, allIds), loadPrototype(jsonObject), loadContext(jsonObject), source, value, file, processor, jsonPath, log);
+        List<ValueProcessor> processors = loadOptionalValueProcessors(jsonObject, allIds);
+        return buildJsonParameter(loadId(jsonObject, allIds), loadPrototype(jsonObject), loadContext(jsonObject), source, value, file, processors, jsonPath, log);
     }
 }

@@ -4,7 +4,10 @@
  */
 package com.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.*;
+import com.emarte.regurgitator.core.JsonLoader;
+import com.emarte.regurgitator.core.Log;
+import com.emarte.regurgitator.core.RegurgitatorException;
+import com.emarte.regurgitator.core.ValueBuilder;
 import net.sf.json.JSONObject;
 
 import java.util.Set;
