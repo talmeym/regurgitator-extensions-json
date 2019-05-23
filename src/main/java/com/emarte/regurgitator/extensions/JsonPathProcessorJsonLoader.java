@@ -11,6 +11,7 @@ import net.sf.json.JSONObject;
 
 import java.util.Set;
 
+import static com.emarte.regurgitator.core.JsonConfigUtil.loadMandatoryStr;
 import static com.emarte.regurgitator.core.Log.getLog;
 import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.JSONPATH;
 
@@ -20,6 +21,6 @@ public class JsonPathProcessorJsonLoader implements JsonLoader<JsonPathProcessor
     @Override
     public JsonPathProcessor load(JSONObject jsonObject, Set<Object> allIds) throws RegurgitatorException {
         log.debug("Loaded json path processor");
-        return new JsonPathProcessor(jsonObject.getString(JSONPATH));
+        return new JsonPathProcessor(loadMandatoryStr(jsonObject, JSONPATH));
     }
 }
