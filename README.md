@@ -160,7 +160,7 @@ an xpath-processor processes a parameter value, extracting a value from it using
     "source": "book-catalogue",
     "processor": {
         "kind": "xpath-processor",
-        "xpath": "/cat:atalogue/bk:book/@name",
+        "xpath": "/cat:catalogue/bk:book/@name",
         "namespaces": "cat=http://catalogues.com,bk=http://books.com"
     }
 }
@@ -175,7 +175,7 @@ namespaces for an xpath-processor can also be declared as a object property of t
     "source": "book-catalogue",
     "processor": {
         "kind": "xpath-processor",
-        "xpath": "/cat:atalogue/bk:book/@name",
+        "xpath": "/cat:catalogue/bk:book/@name",
         "namespaces": {
             "cat": "http://catalogues.com",
             "bk": "http://books.com"
