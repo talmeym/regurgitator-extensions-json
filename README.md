@@ -48,12 +48,16 @@ a freemarker-builder aggregates parameter values together using a freemarker tem
     "kind": "freemarker-builder",
     "source": "template-param"
 }
+```
 
+```json
 {
     "kind": "freemarker-builder",
     "file": "classpath:/template.ftl"
 }
+```
 
+```json
 {
     "kind": "freemarker-builder",
     "value": "This is a ${descriptive} day"
@@ -95,12 +99,16 @@ a freemarker-builder aggregates parameter values together using a freemarker tem
     "kind": "velocity-builder",
     "source": "template-param"
 }
+```
 
+```json
 {
     "kind": "velocity-builder",
     "file": "classpath:/template.ftl"
 }
+```
 
+```json
 {
     "kind": "velocity-builder",
     "value": "This is a ${descriptive} day"
@@ -197,7 +205,9 @@ a freemarker-processor processes a parameter value, formatting the value using a
         "file": "classpath:/template.ftl"
     }
 }
+```
 
+```json
 {
     "kind": "create-response",
     "source": "unformatted-response",
@@ -223,7 +233,9 @@ a velocity-processor processes a parameter value, formatting the value using a v
         "file": "classpath:/template.ftl"
     }
 }
+```
 
+```json
 {
     "kind": "create-response",
     "source": "unformatted-response",
