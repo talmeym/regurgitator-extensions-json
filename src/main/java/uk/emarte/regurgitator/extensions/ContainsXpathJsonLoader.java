@@ -2,17 +2,17 @@
  * Copyright (C) 2017 Miles Talmey.
  * Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
  */
-package com.emarte.regurgitator.extensions;
+package uk.emarte.regurgitator.extensions;
 
-import com.emarte.regurgitator.core.JsonLoader;
-import com.emarte.regurgitator.core.Log;
+import uk.emarte.regurgitator.core.JsonLoader;
+import uk.emarte.regurgitator.core.Log;
 import net.sf.json.JSONObject;
 
 import java.util.Set;
 
-import static com.emarte.regurgitator.core.Log.getLog;
-import static com.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
-import static com.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
+import static uk.emarte.regurgitator.core.Log.getLog;
+import static uk.emarte.regurgitator.extensions.ExtensionsConfigConstants.NAMESPACES;
+import static uk.emarte.regurgitator.extensions.JsonNamespaceLoader.loadNamespaces;
 
 public class ContainsXpathJsonLoader implements JsonLoader<ContainsXpath> {
     private static final Log log = getLog(ContainsXpathJsonLoader.class);
