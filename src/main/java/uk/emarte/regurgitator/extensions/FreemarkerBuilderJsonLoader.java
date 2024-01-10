@@ -4,11 +4,11 @@
  */
 package uk.emarte.regurgitator.extensions;
 
+import net.sf.json.JSONObject;
 import uk.emarte.regurgitator.core.JsonLoader;
 import uk.emarte.regurgitator.core.Log;
 import uk.emarte.regurgitator.core.RegurgitatorException;
 import uk.emarte.regurgitator.core.ValueBuilder;
-import net.sf.json.JSONObject;
 
 import java.util.Set;
 

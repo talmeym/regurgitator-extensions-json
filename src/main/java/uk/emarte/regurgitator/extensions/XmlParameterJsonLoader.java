@@ -4,8 +4,8 @@
  */
 package uk.emarte.regurgitator.extensions;
 
-import uk.emarte.regurgitator.core.*;
 import net.sf.json.JSONObject;
+import uk.emarte.regurgitator.core.*;
 
 import java.util.List;
 import java.util.Set;

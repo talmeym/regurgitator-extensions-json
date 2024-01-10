@@ -4,8 +4,8 @@
  */
 package uk.emarte.regurgitator.extensions;
 
-import uk.emarte.regurgitator.core.Log;
 import net.sf.json.JSONObject;
+import uk.emarte.regurgitator.core.Log;
 
 import java.util.HashMap;
 import java.util.Map;
