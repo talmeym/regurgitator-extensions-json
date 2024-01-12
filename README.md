@@ -10,7 +10,7 @@ read more about regurgitator in json here: [regurgitator-core-json](http://githu
 
 ### json-parameter
 
-a json-parameter creates a parameter, extracting it's value from within a json document, using json-path:
+a json-parameter creates a parameter, extracting its value from within a json document, using json-path:
 
 ```json
 {
@@ -23,7 +23,7 @@ a json-parameter creates a parameter, extracting it's value from within a json d
 
 ### xml-parameter
 
-an xml-parameter creates a parameter, extracting it's value from within an xml document, using xpath:
+an xml-parameter creates a parameter, extracting its value from within an xml document, using xpath:
 
 ```json
 {
@@ -48,12 +48,16 @@ a freemarker-builder aggregates parameter values together using a freemarker tem
     "kind": "freemarker-builder",
     "source": "template-param"
 }
+```
 
+```json
 {
     "kind": "freemarker-builder",
     "file": "classpath:/template.ftl"
 }
+```
 
+```json
 {
     "kind": "freemarker-builder",
     "value": "This is a ${descriptive} day"
@@ -62,7 +66,7 @@ a freemarker-builder aggregates parameter values together using a freemarker tem
 
 a freemarker-builder can use the same value source properties as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value.
 
-a freemarker-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` property is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
+a freemarker-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` property is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, e.g. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
 
 ```json
 {
@@ -77,53 +81,6 @@ as well as defining a json template value as a string (shown above), they can al
 ```json
 {
     "kind": "freemarker-builder",
-    "all-contexts": "true",
-    "value": { 
-        "payload": "${response_payload.text}",
-        "status-code": "${response_metadata.status_code}",
-        "content-type": "${response_metadata.content_type}"
-    }
-}
-```
-
-### velocity-builder
-
-a freemarker-builder aggregates parameter values together using a freemarker template.
-
-```json
-{
-    "kind": "velocity-builder",
-    "source": "template-param"
-}
-
-{
-    "kind": "velocity-builder",
-    "file": "classpath:/template.ftl"
-}
-
-{
-    "kind": "velocity-builder",
-    "value": "This is a ${descriptive} day"
-}
-```
-
-a velocity-builder can use the same value source properties as other steps, such as ``create-parameter``, getting its template text from a source parameter, a file or an explicit value.
-
-a velocity-builder builds from just the ``parameters`` context by default. if the ``all-contexts`` property is true, all context data is made available to the builder, with dashes replaced by underscores in context names, and the colon separating context and parameter names replaced with a period, eg. ``request-metadata:method`` becomes ``request_metadata.method`` when referenced in the template.
-
-```json
-{
-    "kind": "velocity-builder",
-    "all-contexts": "true",
-    "value": "{ \"payload\": \"${response_payload.text}\", \"status-code\": ${response_metadata.status_code}, \"content-type\": \"${response_metadata.content_type}\" }"
-}
-```
-
-as well as defining a json template value as a string (shown above), they can also be defined as a json object, to be collapsed to a string upon loading.
-
-```json
-{
-    "kind": "velocity-builder",
     "all-contexts": "true",
     "value": { 
         "payload": "${response_payload.text}",
@@ -166,7 +123,7 @@ an xpath-processor processes a parameter value, extracting a value from it using
 }
 ```
 
-namespaces for an xpath-processor can also be declared as a object property of the processor:
+namespaces for an xpath-processor can also be declared as an object property of the processor:
 
 ```json
 {
@@ -197,38 +154,14 @@ a freemarker-processor processes a parameter value, formatting the value using a
         "file": "classpath:/template.ftl"
     }
 }
-
-{
-    "kind": "create-response",
-    "source": "unformatted-response",
-    "processor": {
-        "kind": "freemarker-processor",
-        "value": "The response was: ${value}"
-    }
-}
 ```
-
-the parameter value is made available to the template as simply ``value``. the template text can be specified in a ``value`` property or drawn in from a file.
-
-### velocity-processor
-
-a velocity-processor processes a parameter value, formatting the value using a velocity template.
 
 ```json
 {
     "kind": "create-response",
     "source": "unformatted-response",
     "processor": {
-        "kind": "velocity-processor",
-        "file": "classpath:/template.ftl"
-    }
-}
-
-{
-    "kind": "create-response",
-    "source": "unformatted-response",
-    "processor": {
-        "kind": "velocity-processor",
+        "kind": "freemarker-processor",
         "value": "The response was: ${value}"
     }
 }
