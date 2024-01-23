@@ -6,7 +6,7 @@ start your reading here: [regurgitator-all](https://talmeym.github.io/regurgitat
 
 read more about regurgitator in json here: [regurgitator-core-json](https://talmeym.github.io/regurgitator-core-json#json-configuration-of-regurgitator)
 
-[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-json/0.1.2/)
+[``apidocs``](https://regurgitator.emarte.uk/apidocs/regurgitator-extensions-json/0.1.3/)
 
 ## extension steps in json
 
