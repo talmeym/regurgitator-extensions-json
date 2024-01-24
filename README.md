@@ -261,4 +261,37 @@ a contains-xpath is a ``condition-behaviour`` that checks whether a parameter's 
 ...
 ```
 
-the examples above show both ways in which the contains-xpath ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:xml",
+            "value" : "/catalog/book/@name"
+            "behaviour": {
+                "kind": "contains-xpath"
+                "namespaces": "cat=http://catalog.com,book=http://book.com"
+            }
+        }
+    ]
+...
+```
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:xml",
+            "value" : "/catalog/book/@name"
+            "behaviour": {
+                "kind": "contains-xpath"
+                "namespaces": {
+                    "cat" : "http://catalog.com"
+                    "book" : "http://book.com"
+                }
+            }
+        }
+    ]
+...
+```
+
+the examples above shows 3 ways in which the contains-xpath ``condition-behaviour`` can be used: in the short form of ``"behaviour-name" : "value"``; with separate ``value`` and ``behaviour`` attributes; or with a child object. When using a child object, you can either specify namespaces for the xpath expression using a ``namespaces`` attribute, or define the namespaces using a ``namespaces`` object.
