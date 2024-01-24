@@ -295,3 +295,61 @@ a contains-xpath is a ``condition-behaviour`` that checks whether a parameter's 
 ```
 
 the examples above shows 3 ways in which the contains-xpath ``condition-behaviour`` can be used: in the short form of ``"behaviour-name" : "value"``; with separate ``value`` and ``behaviour`` attributes; or with a child object. When using a child object, you can either specify namespaces for the xpath expression using a ``namespaces`` attribute, or a ``namespaces`` object.
+
+### meets-json-schema
+
+a meets-json-schema is a ``condition-behaviour`` that checks whether a parameters' content passes validation against a json schema.
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:json",
+            "meets-json-schema": "classpath:/schema.json"
+        }
+    ]
+...
+```
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:json",
+            "value" : "classpath:/schema.json"
+            "behaviour": "meets-json-schema"
+        }
+    ]
+...
+```
+
+the examples above show both ways in which the meets-json-schema ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
+
+### meets-xml-schema
+
+a meets-xml-schema is a ``condition-behaviour`` that checks whether a parameters' content passes validation against an xml schema.
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:xml",
+            "meets-xml-schema": "classpath:/schema.xsd"
+        }
+    ]
+...
+```
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:xml",
+            "value" : "classpath:/schema.xsd"
+            "behaviour": "meets-xml-schema"
+        }
+    ]
+...
+```
+
+the examples above show both ways in which the meets-xml-schema ``condition-behaviour`` can be used, either in the short form of ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
