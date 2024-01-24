@@ -210,7 +210,7 @@ validating a parameter value can be useful in ensuring that your configured logi
 a contains-json-path is a ``condition-behaviour`` that checks whether a parameter's contents contains a sub-value that can be extracted using an json-path expression. if a sub-value can be extracted from the starting value using the json-path expression provided then the condition passes.
 
 ```json
-    ...
+...
     "conditions": [
         {
             "source": "parameters:json",
