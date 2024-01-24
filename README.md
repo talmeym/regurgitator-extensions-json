@@ -294,4 +294,4 @@ a contains-xpath is a ``condition-behaviour`` that checks whether a parameter's 
 ...
 ```
 
-the examples above shows 3 ways in which the contains-xpath ``condition-behaviour`` can be used: in the short form of ``"behaviour-name" : "value"``; with separate ``value`` and ``behaviour`` attributes; or with a child object. When using a child object, you can either specify namespaces for the xpath expression using a ``namespaces`` attribute, or define the namespaces using a ``namespaces`` object.
+the examples above shows 3 ways in which the contains-xpath ``condition-behaviour`` can be used: in the short form of ``"behaviour-name" : "value"``; with separate ``value`` and ``behaviour`` attributes; or with a child object. When using a child object, you can either specify namespaces for the xpath expression using a ``namespaces`` attribute, or a ``namespaces`` object.
