@@ -239,7 +239,7 @@ the examples above show both ways in which the contains-json-path ``condition-be
 a contains-xpath is a ``condition-behaviour`` that checks whether a parameter's contents contains a sub-value that can be extracted using an xpath expression. if a sub-value can be extracted from the starting value using the xpath expression provided then the condition passes.
 
 ```json
-    ...
+...
     "conditions": [
         {
             "source": "parameters:xml",
