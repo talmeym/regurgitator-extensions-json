@@ -204,3 +204,61 @@ an xml-schema-validator is a ``value-processor`` that validates a parameter valu
 ```
 
 validating a parameter value can be useful in ensuring that your configured logic and processing always returns valid responses. if the value fails validation, an exception is thrown; if it passes, the value is passed through unchanged.
+
+### contains-json-path
+
+a contains-json-path is a ``condition-behaviour`` that checks whether a parameter's contents contains a sub-value that can be extracted using an json-path expression. if a sub-value can be extracted from the starting value using the json-path expression provided then the condition passes.
+
+```json
+    ...
+    "conditions": [
+        {
+            "source": "parameters:json",
+            "contains-json-path": "$.catalog.book.name"
+        }
+    ]
+...
+```
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:json",
+            "value" : "$.catalog.book.name"
+            "behaviour": "contains-json-path"
+        }
+    ]
+...
+```
+
+the examples above show both ways in which the contains-json-path ``condition-behaviour`` can be used in a condition, either in the short form ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
+
+### contains-xpath
+
+a contains-xpath is a ``condition-behaviour`` that checks whether a parameter's contents contains a sub-value that can be extracted using an xpath expression. if a sub-value can be extracted from the starting value using the xpath expression provided then the condition passes.
+
+```json
+    ...
+    "conditions": [
+        {
+            "source": "parameters:xml",
+            "contains-xpath": "/catalogue/book/@name"
+        }
+    ]
+...
+```
+
+```json
+...
+    "conditions": [
+        {
+            "source": "parameters:xml",
+            "value" : "/catalog/book/@name"
+            "behaviour": "contains-xpath"
+        }
+    ]
+...
+```
+
+the examples above show both ways in which the contains-xpath ``condition-behaviour`` can be used in a condition, either in the short form ``"behaviour-name" : "value"`` or with separate ``value`` and ``behaviour`` attributes.
