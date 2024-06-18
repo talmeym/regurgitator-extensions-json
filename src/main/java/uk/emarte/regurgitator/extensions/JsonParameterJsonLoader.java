@@ -25,6 +25,6 @@ public class JsonParameterJsonLoader extends JsonParameterLoader implements Json
         String value = loadOptionalStr(jsonObject, VALUE);
         String file = loadOptionalStr(jsonObject, FILE);
         List<ValueProcessor> processors = loadOptionalValueProcessors(jsonObject, allIds);
-        return buildJsonParameter(loadId(jsonObject, allIds), loadPrototype(jsonObject), loadContext(jsonObject), source, value, file, processors, jsonPath, log);
+        return buildJsonParameter(loadId(jsonObject, allIds), loadPrototype(jsonObject), loadContext(jsonObject), source, value, file, processors, jsonPath, loadOptionalBool(jsonObject, OPTIONAL), log);
     }
 }
