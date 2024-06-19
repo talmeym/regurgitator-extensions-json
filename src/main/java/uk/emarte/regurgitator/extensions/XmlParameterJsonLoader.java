@@ -27,6 +27,6 @@ public class XmlParameterJsonLoader extends XmlParameterLoader implements JsonLo
         String value = loadOptionalStr(jsonObject, VALUE);
         String file = loadOptionalStr(jsonObject, FILE);
         List<ValueProcessor> processors = loadOptionalValueProcessors(jsonObject, allIds);
-        return buildXmlParameter(loadId(jsonObject, allIds), loadPrototype(jsonObject), loadContext(jsonObject), source, value, file, processors, new XpathProcessor(xpath, loadNamespaces(jsonObject.get(NAMESPACES))), log);
+        return buildXmlParameter(loadId(jsonObject, allIds), loadPrototype(jsonObject), loadContext(jsonObject), source, value, file, processors, new XpathProcessor(xpath, loadNamespaces(jsonObject.get(NAMESPACES))), loadOptionalBool(jsonObject, OPTIONAL), log);
     }
 }
